@@ -1,3 +1,9 @@
+########################################
+# Copyright Aaron Johnson
+# Contact info: Aaronjohnson@protonmail.ch
+# Fun little knock of of Eliza!
+########################################
+
 import random 
 import re
 import sys
