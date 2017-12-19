@@ -1,9 +1,3 @@
-########################################
-# Copyright Aaron Johnson
-# Contact info: Aaronjohnson@protonmail.ch
-# Fun little knock of of Eliza!
-########################################
-
 import random 
 import re
 import sys
@@ -240,10 +234,12 @@ class Eliza(object):
            ]
 
         self.__gender = 'female'
+        self.__age = 21
         
-        self.__voice_speed = 0
         self.select_gender(self.__gender)
         self.set_gender(self.get_gender())
+        self.set_speech_rate()
+
 
     def reflect(self, fragment):
         tokens = fragment.lower().split()
@@ -270,8 +266,13 @@ class Eliza(object):
     def get_gender(self):
         return self.__gender
 
-    def __speech_speed(self, speed):
-        self.__voice_speed = speed
+    def set_speech_rate(self):
+        rate = engine.getProperty('rate')
+        rate_two = engine_one.getProperty('rate')
+        engine.setProperty('rate', rate-40)
+        engine_one.setProperty('rate', rate-40)
+        
+
     
     def test_voices():
         engine = pyttsx.init()
